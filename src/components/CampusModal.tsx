@@ -1,11 +1,55 @@
 import { useState, useRef } from 'react';
 import Icon from '@/components/ui/icon';
-import { Campus, QRCode } from '@/data/campuses';
+import { Campus, QRCode, FloorMap } from '@/data/campuses';
 
 interface CampusModalProps {
   campus: Campus;
   onClose: () => void;
   onUpdateQR: (campusId: string, qrId: string, imageUrl: string) => void;
+}
+
+function FloorMapTab({ floorMaps }: { floorMaps: FloorMap[] }) {
+  const [activeFloor, setActiveFloor] = useState(floorMaps[0]?.floor ?? 1);
+
+  if (floorMaps.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center gap-3 py-12 text-gray-400">
+        <Icon name="LayoutGrid" size={40} />
+        <span className="font-ibm text-sm">Карта этажей пока не добавлена</span>
+      </div>
+    );
+  }
+
+  const current = floorMaps.find(f => f.floor === activeFloor) ?? floorMaps[0];
+
+  return (
+    <div className="space-y-4">
+      {floorMaps.length > 1 && (
+        <div className="flex gap-2">
+          {floorMaps.map(f => (
+            <button
+              key={f.floor}
+              onClick={() => setActiveFloor(f.floor)}
+              className={`px-4 py-2 rounded-xl text-xs font-ibm font-semibold transition-all ${
+                activeFloor === f.floor
+                  ? 'bg-agu-blue text-white shadow'
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              }`}
+            >
+              {f.label}
+            </button>
+          ))}
+        </div>
+      )}
+      <div className="rounded-2xl overflow-hidden border border-gray-200 bg-white">
+        <img
+          src={current.imageUrl}
+          alt={current.label}
+          className="w-full h-auto object-contain"
+        />
+      </div>
+    </div>
+  );
 }
 
 export default function CampusModal({ campus, onClose, onUpdateQR }: CampusModalProps) {
@@ -192,21 +236,7 @@ export default function CampusModal({ campus, onClose, onUpdateQR }: CampusModal
           )}
 
           {activeTab === 'floor' && (
-            <div className="space-y-4">
-              <div className="flex items-center gap-2 p-3 bg-blue-50 rounded-xl border border-blue-100">
-                <Icon name="Info" size={14} className="text-agu-blue flex-shrink-0" />
-                <p className="text-agu-blue text-xs font-ibm">
-                  Карта этажей будет добавлена позже. Вы сможете загрузить схему корпуса в этом разделе.
-                </p>
-              </div>
-              <div className="aspect-video rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col items-center justify-center gap-3 border-2 border-dashed border-gray-300">
-                <Icon name="LayoutGrid" size={40} className="text-gray-300" />
-                <span className="text-gray-400 font-ibm text-sm">Схема этажей будет здесь</span>
-                <button className="px-4 py-2 rounded-xl bg-agu-blue text-white text-xs font-ibm font-semibold hover:bg-agu-blue-mid transition-colors">
-                  Загрузить схему
-                </button>
-              </div>
-            </div>
+            <FloorMapTab floorMaps={campus.floorMaps ?? []} />
           )}
         </div>
       </div>

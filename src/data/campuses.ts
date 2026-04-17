@@ -4,6 +4,12 @@ export interface QRCode {
   imageUrl: string | null;
 }
 
+export interface FloorMap {
+  floor: number;
+  label: string;
+  imageUrl: string;
+}
+
 export interface Campus {
   id: string;
   letter: string;
@@ -19,6 +25,7 @@ export interface Campus {
   qrCodes: QRCode[];
   photoUrl?: string;
   hasFloorMap?: boolean;
+  floorMaps?: FloorMap[];
   extraInfo?: string[];
 }
 
@@ -39,7 +46,7 @@ export const CAMPUSES: Campus[] = [
       { id: 'ingeo', name: 'ИНГЕО', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/547796f2-469c-414e-ac6c-c3906fc9eb1f.jpg' },
       { id: 'iimo', name: 'ИИМО', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/6728eb9d-4b80-4c1e-997f-e10572e573b0.jpg' },
     ],
-    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/AltSU_Main_building.jpg/800px-AltSU_Main_building.jpg',
+    photoUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/85f5e6c8-95e2-4b45-b4aa-00631a00265a.jpeg',
   },
   {
     id: 'L',
@@ -58,7 +65,7 @@ export const CAMPUSES: Campus[] = [
       { id: 'imit', name: 'ИМИТ', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/29ed344b-16f1-4186-871f-186da7baccec.jpg' },
       { id: 'library', name: 'Библиотека', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/94814fa5-1650-4f0b-ae1a-6bd4d43ae4c5.jpg' },
     ],
-    photoUrl: 'https://www.asu.ru/files/images/campus_l.jpg',
+    photoUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/93c3eaf1-8678-46be-aae0-80b6a12e1d9c.jpg',
   },
   {
     id: 'S',
@@ -84,7 +91,11 @@ export const CAMPUSES: Campus[] = [
     ],
     photoUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/7d31a00c-59b4-4972-a314-d63a297ff17a.jpg',
     hasFloorMap: true,
-    extraInfo: ['Пристройка имени Калашникова', 'Карта этажей (скоро)'],
+    floorMaps: [
+      { floor: 1, label: '1 этаж', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/b29ca90e-c6b8-4fbd-acb4-ea2211f8f4a8.png' },
+      { floor: 2, label: '2 этаж', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/50c83a67-fd59-41f0-9b2c-4fd2382e6765.png' },
+    ],
+    extraInfo: ['Пристройка имени Калашникова'],
   },
   {
     id: 'D',
@@ -120,7 +131,7 @@ export const CAMPUSES: Campus[] = [
       { id: 'ihihft', name: 'ИХиХФТ', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/5ce61bab-7f32-4d34-9c54-ed0194344a3b.jpg' },
       { id: 'ictef', name: 'ИЦТЭФ', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/d82b12e8-33f4-4d54-af20-e8c8fe129ec7.jpg' },
     ],
-    photoUrl: 'https://www.asu.ru/files/images/campus_k.jpg',
+    photoUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/a0ddd18c-6d26-4dd9-b024-4ed44cf872b8.jpg',
   },
   {
     id: 'SOK',
