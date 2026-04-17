@@ -7,9 +7,25 @@ import AboutSection from '@/components/AboutSection';
 import Footer from '@/components/Footer';
 import { Campus, CAMPUSES } from '@/data/campuses';
 
+const COORDS_KEY = 'agu_campus_coords';
+
+function loadSavedCoords(): Record<string, { lat: number; lng: number }> {
+  try {
+    const raw = localStorage.getItem(COORDS_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch {
+    return {};
+  }
+}
+
+function initCampuses(): Campus[] {
+  const saved = loadSavedCoords();
+  return CAMPUSES.map(c => saved[c.id] ? { ...c, ...saved[c.id] } : c);
+}
+
 export default function Index() {
   const [activeSection, setActiveSection] = useState('home');
-  const [campuses, setCampuses] = useState<Campus[]>(CAMPUSES);
+  const [campuses, setCampuses] = useState<Campus[]>(initCampuses);
   const [selectedCampus, setSelectedCampus] = useState<Campus | null>(null);
 
   const scrollToSection = useCallback((section: string) => {
@@ -56,9 +72,14 @@ export default function Index() {
   }, []);
 
   const handleUpdateCoords = useCallback((campusId: string, lat: number, lng: number) => {
-    setCampuses(prev => prev.map(c =>
-      c.id === campusId ? { ...c, lat, lng } : c
-    ));
+    setCampuses(prev => {
+      const updated = prev.map(c => c.id === campusId ? { ...c, lat, lng } : c);
+      // persist all coords to localStorage
+      const saved = loadSavedCoords();
+      saved[campusId] = { lat, lng };
+      localStorage.setItem(COORDS_KEY, JSON.stringify(saved));
+      return updated;
+    });
   }, []);
 
   return (

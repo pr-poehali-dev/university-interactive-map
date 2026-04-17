@@ -51,7 +51,7 @@ const facilities: FacilityItem[] = [
     desc: 'Многопрофильное среднее профессиональное учебное заведение в составе АГУ',
     color: '#7C3AED',
     address: 'г. Барнаул',
-    qr: { imageUrl: null, label: 'QR-код Колледжа' },
+    qr: { imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/829bc100-c1d0-44c6-9c02-b0c2f8352a0f.jpg', label: 'QR-код Колледжа' },
   },
 ];
 
