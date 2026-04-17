@@ -55,11 +55,21 @@ export default function Index() {
     }, 150);
   }, []);
 
+  const handleUpdateCoords = useCallback((campusId: string, lat: number, lng: number) => {
+    setCampuses(prev => prev.map(c =>
+      c.id === campusId ? { ...c, lat, lng } : c
+    ));
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Navbar activeSection={activeSection} onNavigate={scrollToSection} />
       <HeroSection onNavigate={scrollToSection} />
-      <MapSection onSelectCampus={handleMapSelect} />
+      <MapSection
+        campuses={campuses}
+        onSelectCampus={handleMapSelect}
+        onUpdateCoords={handleUpdateCoords}
+      />
       <CampusesSection
         campuses={campuses}
         selectedCampus={selectedCampus}

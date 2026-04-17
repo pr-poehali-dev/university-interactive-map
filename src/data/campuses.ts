@@ -36,8 +36,8 @@ export const CAMPUSES: Campus[] = [
     institutes: ['ИНГЕО', 'ИИМО'],
     description: 'Главный учебный корпус университета, расположенный в центре Барнаула',
     qrCodes: [
-      { id: 'ingeo', name: 'ИНГЕО', imageUrl: null },
-      { id: 'iimo', name: 'ИИМО', imageUrl: null },
+      { id: 'ingeo', name: 'ИНГЕО', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/547796f2-469c-414e-ac6c-c3906fc9eb1f.jpg' },
+      { id: 'iimo', name: 'ИИМО', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/6728eb9d-4b80-4c1e-997f-e10572e573b0.jpg' },
     ],
     photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/AltSU_Main_building.jpg/800px-AltSU_Main_building.jpg',
   },
@@ -55,7 +55,7 @@ export const CAMPUSES: Campus[] = [
     description: 'Учебный корпус с институтами биологии, математики и информационных технологий',
     qrCodes: [
       { id: 'ibb', name: 'ИББ', imageUrl: null },
-      { id: 'imit', name: 'ИМИТ', imageUrl: null },
+      { id: 'imit', name: 'ИМИТ', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/29ed344b-16f1-4186-871f-186da7baccec.jpg' },
       { id: 'library', name: 'Библиотека', imageUrl: null },
     ],
     photoUrl: 'https://www.asu.ru/files/images/campus_l.jpg',
@@ -73,7 +73,7 @@ export const CAMPUSES: Campus[] = [
     institutes: ['МИЭМИС', 'Юридический институт', 'Деканат очная форма', 'Деканат заочная форма', 'Центр Творчества', 'Точка кипения', 'Лига студентов'],
     description: 'Многофункциональный корпус с деканатами, студенческими организациями и творческими пространствами',
     qrCodes: [
-      { id: 'miemis', name: 'МИЭМИС', imageUrl: null },
+      { id: 'miemis', name: 'МИЭМИС', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/d37d2021-cf3d-482f-ad00-e0db5f32cb3a.jpg' },
       { id: 'law', name: 'Юридический институт', imageUrl: null },
       { id: 'dean_full', name: 'Деканат очная форма', imageUrl: null },
       { id: 'dean_part', name: 'Деканат заочная форма', imageUrl: null },
@@ -98,7 +98,7 @@ export const CAMPUSES: Campus[] = [
     institutes: ['ИГН', 'Медиа.Хаб'],
     description: 'Корпус гуманитарных наук и медиапространства',
     qrCodes: [
-      { id: 'ign', name: 'ИГН', imageUrl: null },
+      { id: 'ign', name: 'ИГН', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/a3bfa837-ab8f-4cf7-b5e5-e2a9be88f7dd.jpg' },
       { id: 'mediahub', name: 'Медиа.Хаб', imageUrl: null },
     ],
     photoUrl: 'https://www.asu.ru/files/images/campus_d.jpg',
@@ -132,7 +132,7 @@ export const CAMPUSES: Campus[] = [
     color: '#16A34A',
     gradient: 'linear-gradient(135deg, #16A34A 0%, #4ADE80 100%)',
     institutes: [],
-    description: 'Спортивно-оздоровительный комплекс университета с бассейном, спортзалами и фитнес-центром',
+    description: 'Спортивно-оздоровительный комплекс университета со спортзалами и фитнес-центром',
     qrCodes: [
       { id: 'sok_main', name: 'СОК', imageUrl: null },
     ],
