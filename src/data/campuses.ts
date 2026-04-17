@@ -94,6 +94,8 @@ export const CAMPUSES: Campus[] = [
     floorMaps: [
       { floor: 1, label: '1 этаж', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/b29ca90e-c6b8-4fbd-acb4-ea2211f8f4a8.png' },
       { floor: 2, label: '2 этаж', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/50c83a67-fd59-41f0-9b2c-4fd2382e6765.png' },
+      { floor: 3, label: '3 этаж', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/2d2ca60d-695e-45bd-ba70-b6e7ec680940.png' },
+      { floor: 4, label: '4 этаж', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/d097d2b8-01ee-4f8a-9e13-81de164889ba.png' },
     ],
     extraInfo: ['Пристройка имени Калашникова'],
   },
