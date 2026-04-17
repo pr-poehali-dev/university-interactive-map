@@ -174,22 +174,41 @@ export default function CampusModal({ campus, onClose, onUpdateQR }: CampusModal
                 </div>
               )}
 
-              {campus.extraInfo && campus.extraInfo.length > 0 && (
+              {(campus.extraInfo?.length || campus.extraPhotos?.length) ? (
                 <div>
                   <h3 className="font-montserrat font-bold text-gray-800 mb-3 flex items-center gap-2">
                     <Icon name="Star" size={16} className="text-agu-orange" />
                     Дополнительно
                   </h3>
-                  <div className="space-y-2">
-                    {campus.extraInfo.map((info) => (
-                      <div key={info} className="flex items-center gap-2.5 p-3 rounded-xl bg-orange-50 border border-orange-100">
-                        <Icon name="ChevronRight" size={14} className="text-agu-orange flex-shrink-0" />
-                        <span className="text-gray-700 font-ibm text-sm">{info}</span>
-                      </div>
-                    ))}
-                  </div>
+                  {campus.extraInfo && campus.extraInfo.length > 0 && (
+                    <div className="space-y-2 mb-4">
+                      {campus.extraInfo.map((info) => (
+                        <div key={info} className="flex items-center gap-2.5 p-3 rounded-xl bg-orange-50 border border-orange-100">
+                          <Icon name="ChevronRight" size={14} className="text-agu-orange flex-shrink-0" />
+                          <span className="text-gray-700 font-ibm text-sm">{info}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {campus.extraPhotos && campus.extraPhotos.length > 0 && (
+                    <div className="space-y-3">
+                      {campus.extraPhotos.map((photo) => (
+                        <div key={photo.label} className="rounded-2xl overflow-hidden border border-gray-200">
+                          <img
+                            src={photo.imageUrl}
+                            alt={photo.label}
+                            className="w-full object-cover"
+                            style={{ maxHeight: '240px' }}
+                          />
+                          <div className="px-3 py-2 bg-gray-50 border-t border-gray-100">
+                            <span className="text-xs font-ibm text-gray-500">{photo.label}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              )}
+              ) : null}
 
               <div className="p-4 rounded-2xl bg-blue-50 border border-blue-100">
                 <div className="flex items-start gap-3">

@@ -27,6 +27,7 @@ export interface Campus {
   hasFloorMap?: boolean;
   floorMaps?: FloorMap[];
   extraInfo?: string[];
+  extraPhotos?: { label: string; imageUrl: string }[];
 }
 
 export const CAMPUSES: Campus[] = [
@@ -98,6 +99,9 @@ export const CAMPUSES: Campus[] = [
       { floor: 4, label: '4 этаж', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/d097d2b8-01ee-4f8a-9e13-81de164889ba.png' },
     ],
     extraInfo: ['Пристройка имени Калашникова'],
+    extraPhotos: [
+      { label: 'Пристройка имени Калашникова', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/5460998c-d4a4-4117-b475-6828a2c1b487.jpg' },
+    ],
   },
   {
     id: 'D',
