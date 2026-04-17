@@ -1,0 +1,167 @@
+export interface QRCode {
+  id: string;
+  name: string;
+  imageUrl: string | null;
+}
+
+export interface Campus {
+  id: string;
+  letter: string;
+  name: string;
+  fullName: string;
+  address: string;
+  lat: number;
+  lng: number;
+  color: string;
+  gradient: string;
+  institutes: string[];
+  description: string;
+  qrCodes: QRCode[];
+  photoUrl?: string;
+  hasFloorMap?: boolean;
+  extraInfo?: string[];
+}
+
+export const CAMPUSES: Campus[] = [
+  {
+    id: 'M',
+    letter: 'М',
+    name: 'Главный корпус М',
+    fullName: 'Главный корпус М',
+    address: 'пр. Ленина, 61',
+    lat: 53.34676,
+    lng: 83.77611,
+    color: '#0A2463',
+    gradient: 'linear-gradient(135deg, #0A2463 0%, #2D5BE3 100%)',
+    institutes: ['ИНГЕО', 'ИИМО'],
+    description: 'Главный учебный корпус университета, расположенный в центре Барнаула',
+    qrCodes: [
+      { id: 'ingeo', name: 'ИНГЕО', imageUrl: null },
+      { id: 'iimo', name: 'ИИМО', imageUrl: null },
+    ],
+    photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/AltSU_Main_building.jpg/800px-AltSU_Main_building.jpg',
+  },
+  {
+    id: 'L',
+    letter: 'Л',
+    name: 'Корпус Л',
+    fullName: 'Корпус Л',
+    address: 'пр. Ленина, 61',
+    lat: 53.34720,
+    lng: 83.77540,
+    color: '#1A3A8A',
+    gradient: 'linear-gradient(135deg, #1A3A8A 0%, #4A7ADB 100%)',
+    institutes: ['ИББ', 'ИМИТ', 'Библиотека'],
+    description: 'Учебный корпус с институтами биологии, математики и информационных технологий',
+    qrCodes: [
+      { id: 'ibb', name: 'ИББ', imageUrl: null },
+      { id: 'imit', name: 'ИМИТ', imageUrl: null },
+      { id: 'library', name: 'Библиотека', imageUrl: null },
+    ],
+    photoUrl: 'https://www.asu.ru/files/images/campus_l.jpg',
+  },
+  {
+    id: 'S',
+    letter: 'С',
+    name: 'Корпус С',
+    fullName: 'Корпус С',
+    address: 'пр. Социалистический, 68',
+    lat: 53.34380,
+    lng: 83.78110,
+    color: '#E87722',
+    gradient: 'linear-gradient(135deg, #E87722 0%, #F5A623 100%)',
+    institutes: ['МИЭМИС', 'Юридический институт', 'Деканат очная форма', 'Деканат заочная форма', 'Центр Творчества', 'Точка кипения', 'Лига студентов'],
+    description: 'Многофункциональный корпус с деканатами, студенческими организациями и творческими пространствами',
+    qrCodes: [
+      { id: 'miemis', name: 'МИЭМИС', imageUrl: null },
+      { id: 'law', name: 'Юридический институт', imageUrl: null },
+      { id: 'dean_full', name: 'Деканат очная форма', imageUrl: null },
+      { id: 'dean_part', name: 'Деканат заочная форма', imageUrl: null },
+      { id: 'creative', name: 'Центр Творчества', imageUrl: null },
+      { id: 'boiling', name: 'Точка кипения', imageUrl: null },
+      { id: 'league', name: 'Лига студентов', imageUrl: null },
+    ],
+    photoUrl: 'https://www.asu.ru/files/images/campus_s.jpg',
+    hasFloorMap: true,
+    extraInfo: ['Пристройка имени Калашникова', 'Карта этажей (скоро)'],
+  },
+  {
+    id: 'D',
+    letter: 'Д',
+    name: 'Корпус Д',
+    fullName: 'Корпус Д',
+    address: 'ул. Димитрова, 66',
+    lat: 53.33850,
+    lng: 83.79540,
+    color: '#2D5BE3',
+    gradient: 'linear-gradient(135deg, #2D5BE3 0%, #6B8FFF 100%)',
+    institutes: ['ИГН', 'Медиа.Хаб'],
+    description: 'Корпус гуманитарных наук и медиапространства',
+    qrCodes: [
+      { id: 'ign', name: 'ИГН', imageUrl: null },
+      { id: 'mediahub', name: 'Медиа.Хаб', imageUrl: null },
+    ],
+    photoUrl: 'https://www.asu.ru/files/images/campus_d.jpg',
+  },
+  {
+    id: 'K',
+    letter: 'К',
+    name: 'Корпус К',
+    fullName: 'Корпус К',
+    address: 'пр. Красноармейский, 90',
+    lat: 53.32740,
+    lng: 83.77920,
+    color: '#0A2463',
+    gradient: 'linear-gradient(135deg, #0A2463 0%, #3D70D6 100%)',
+    institutes: ['ИХиХФТ', 'ИЦТЭФ'],
+    description: 'Корпус химических и физико-технических наук',
+    qrCodes: [
+      { id: 'ihihft', name: 'ИХиХФТ', imageUrl: null },
+      { id: 'ictef', name: 'ИЦТЭФ', imageUrl: null },
+    ],
+    photoUrl: 'https://www.asu.ru/files/images/campus_k.jpg',
+  },
+  {
+    id: 'SOK',
+    letter: 'СОК',
+    name: 'СОК',
+    fullName: 'Спортивно-оздоровительный комплекс',
+    address: 'пр. Красноармейский, 90а',
+    lat: 53.32690,
+    lng: 83.77860,
+    color: '#16A34A',
+    gradient: 'linear-gradient(135deg, #16A34A 0%, #4ADE80 100%)',
+    institutes: [],
+    description: 'Спортивно-оздоровительный комплекс университета с бассейном, спортзалами и фитнес-центром',
+    qrCodes: [
+      { id: 'sok_main', name: 'СОК', imageUrl: null },
+    ],
+  },
+  {
+    id: 'CLINIC',
+    letter: '🏥',
+    name: 'Студенческая поликлиника',
+    fullName: 'Студенческая поликлиника',
+    address: 'ул. Юрина, 166а',
+    lat: 53.31960,
+    lng: 83.74850,
+    color: '#DC2626',
+    gradient: 'linear-gradient(135deg, #DC2626 0%, #F87171 100%)',
+    institutes: [],
+    description: 'Студенческая поликлиника для обслуживания студентов и сотрудников АГУ',
+    qrCodes: [
+      { id: 'clinic_main', name: 'Поликлиника', imageUrl: null },
+    ],
+  },
+];
+
+export const UNIVERSITY_INFO = {
+  name: 'Алтайский государственный университет',
+  shortName: 'АГУ',
+  founded: 1973,
+  students: '14 000+',
+  institutes: 11,
+  description: 'Алтайский государственный университет — ведущий классический университет Сибири и Дальнего Востока, один из опорных университетов России.',
+  hasCollege: true,
+  collegeDescription: 'В состав университета входит Колледж АГУ — многопрофильное среднее профессиональное учебное заведение.',
+};
