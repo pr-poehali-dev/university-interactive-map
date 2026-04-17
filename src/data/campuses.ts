@@ -54,9 +54,9 @@ export const CAMPUSES: Campus[] = [
     institutes: ['ИББ', 'ИМИТ', 'Библиотека'],
     description: 'Учебный корпус с институтами биологии, математики и информационных технологий',
     qrCodes: [
-      { id: 'ibb', name: 'ИББ', imageUrl: null },
+      { id: 'ibb', name: 'ИББ', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/80fd0711-1305-4301-ba93-afeb8f3b0c1a.jpg' },
       { id: 'imit', name: 'ИМИТ', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/29ed344b-16f1-4186-871f-186da7baccec.jpg' },
-      { id: 'library', name: 'Библиотека', imageUrl: null },
+      { id: 'library', name: 'Библиотека', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/94814fa5-1650-4f0b-ae1a-6bd4d43ae4c5.jpg' },
     ],
     photoUrl: 'https://www.asu.ru/files/images/campus_l.jpg',
   },
@@ -70,16 +70,17 @@ export const CAMPUSES: Campus[] = [
     lng: 83.78110,
     color: '#E87722',
     gradient: 'linear-gradient(135deg, #E87722 0%, #F5A623 100%)',
-    institutes: ['МИЭМИС', 'Юридический институт', 'Деканат очная форма', 'Деканат заочная форма', 'Центр Творчества', 'Точка кипения', 'Лига студентов'],
+    institutes: ['МИЭМИС', 'Юридический институт', 'Деканат очная форма', 'Деканат заочная форма', 'Центр Творчества', 'Точка кипения', 'Лига студентов', 'Центр тьюторов'],
     description: 'Многофункциональный корпус с деканатами, студенческими организациями и творческими пространствами',
     qrCodes: [
       { id: 'miemis', name: 'МИЭМИС', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/d37d2021-cf3d-482f-ad00-e0db5f32cb3a.jpg' },
       { id: 'law', name: 'Юридический институт', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/6a86c4ad-bc57-4735-92c2-a4bc67a6724c.jpg' },
       { id: 'dean_full', name: 'Деканат очная форма', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/5cb41bef-72f1-4a69-be77-2c85fa7640de.jpg' },
-      { id: 'dean_part', name: 'Деканат заочная форма', imageUrl: null },
+      { id: 'dean_part', name: 'Деканат заочная форма', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/42f97db3-f293-49c6-9482-f2c96db4791b.jpg' },
       { id: 'creative', name: 'Центр Творчества', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/adceea3a-bb90-4f8b-ba60-48cd0f48f9a8.jpg' },
       { id: 'boiling', name: 'Точка кипения', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/1622e1f4-899a-4545-aa05-fe5fb79e5329.jpg' },
       { id: 'league', name: 'Лига студентов', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/dbe79b6e-9e55-44af-a0b4-f4a0849718dd.jpg' },
+      { id: 'tutors', name: 'Центр тьюторов', imageUrl: null },
     ],
     photoUrl: 'https://www.asu.ru/files/images/campus_s.jpg',
     hasFloorMap: true,
@@ -99,7 +100,7 @@ export const CAMPUSES: Campus[] = [
     description: 'Корпус гуманитарных наук и медиапространства',
     qrCodes: [
       { id: 'ign', name: 'ИГН', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/a3bfa837-ab8f-4cf7-b5e5-e2a9be88f7dd.jpg' },
-      { id: 'mediahub', name: 'Медиа.Хаб', imageUrl: null },
+      { id: 'mediahub', name: 'Медиа.Хаб', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/7595801e-1c7c-46f8-882a-a195b530f670.jpg' },
     ],
     photoUrl: 'https://www.asu.ru/files/images/campus_d.jpg',
   },
@@ -116,7 +117,7 @@ export const CAMPUSES: Campus[] = [
     institutes: ['ИХиХФТ', 'ИЦТЭФ'],
     description: 'Корпус химических и физико-технических наук',
     qrCodes: [
-      { id: 'ihihft', name: 'ИХиХФТ', imageUrl: null },
+      { id: 'ihihft', name: 'ИХиХФТ', imageUrl: 'https://cdn.poehali.dev/projects/5538d5de-e2ec-4216-939d-ef41f58aa087/bucket/5ce61bab-7f32-4d34-9c54-ed0194344a3b.jpg' },
       { id: 'ictef', name: 'ИЦТЭФ', imageUrl: null },
     ],
     photoUrl: 'https://www.asu.ru/files/images/campus_k.jpg',
@@ -134,6 +135,7 @@ export const CAMPUSES: Campus[] = [
     institutes: [],
     description: 'Спортивно-оздоровительный комплекс университета со спортзалами и фитнес-центром',
     qrCodes: [],
+
   },
   {
     id: 'CLINIC',
