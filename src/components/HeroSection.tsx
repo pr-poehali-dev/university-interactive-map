@@ -8,8 +8,8 @@ interface HeroSectionProps {
 const stats = [
   { value: '1973', label: 'Год основания', icon: 'Calendar' },
   { value: '14 000+', label: 'Студентов', icon: 'Users' },
-  { value: '11', label: 'Институтов', icon: 'Building2' },
-  { value: '7', label: 'Корпусов', icon: 'MapPin' },
+  { value: '9', label: 'Институтов', icon: 'Building2' },
+  { value: '6', label: 'Корпусов', icon: 'MapPin' },
 ];
 
 export default function HeroSection({ onNavigate }: HeroSectionProps) {
